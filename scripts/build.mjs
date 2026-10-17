@@ -292,6 +292,10 @@ for (const page of pages) {
 }
 
 const index = readFileSync(join(DIST, "index.html"), "utf8");
+// Cloudflare's Email Address Obfuscation rewrites any address outside
+// <!--email_off--> ... <!--email_on--> into a link that needs JavaScript.
+const unprotected = index.replace(/<!--email_off-->[\s\S]*?<!--email_on-->/g, "");
+if (unprotected.includes("@")) fail("index.html: email address outside <!--email_off--> block");
 if (!index.includes('<link rel="canonical" href="https://appliedopslab.com/">')) fail("index.html: canonical URL missing");
 if (!index.includes(`>${EMAIL}<`)) fail("index.html: contact address not shown as text");
 
