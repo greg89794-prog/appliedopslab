@@ -1,0 +1,38 @@
+{
+  "_note": "Conceptual example for the site's Figure 1. All lengths in inches. scripts/build.mjs checks every number here before rendering the diagram.",
+  "stockLength": 240,
+  "kerf": 0.125,
+  "reusableMin": 24,
+  "parts": {
+    "A": 68,
+    "B": 52.5,
+    "C": 39.75,
+    "D": 27.25
+  },
+  "orders": [
+    ["B", "B", "C", "D"],
+    ["B", "C", "C", "D"],
+    ["A", "B", "C", "D"],
+    ["A", "B", "C"]
+  ],
+  "patterns": [
+    {
+      "id": "in-order",
+      "title": "Cut in the order received",
+      "bars": [
+        ["B", "B", "C", "D", "B"],
+        ["C", "C", "D", "A", "B"],
+        ["C", "D", "A", "B", "C"]
+      ]
+    },
+    {
+      "id": "planned",
+      "title": "Planned as one set",
+      "bars": [
+        ["B", "C", "C", "C", "C", "D"],
+        ["B", "B", "B", "B", "D"],
+        ["A", "A", "C", "D"]
+      ]
+    }
+  ]
+}
