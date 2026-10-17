@@ -412,6 +412,13 @@ a:hover {
   }
 }
 
+.focus-level {
+  margin-bottom: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
 .focus-grid h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -451,6 +458,12 @@ a:hover {
 
 .panels {
   display: grid;
+}
+
+.sheet-takeaway {
+  padding: 0.25rem clamp(1rem, 0.5rem + 2vw, 2rem) 1.5rem;
+  max-width: 50rem;
+  font-weight: 500;
 }
 
 .panel {

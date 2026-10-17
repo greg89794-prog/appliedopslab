@@ -72,6 +72,15 @@ const inOrder = data.patterns.find((p) => p.id === "in-order");
   }
 }
 
+// The text under Figure 1 claims both plans use the same stock and that only
+// planning across orders leaves a single reusable remnant. Keep the data honest to it.
+const planned = data.patterns.find((p) => p.id === "planned");
+const reusable = (pattern) => pattern.bars.filter((b) => fromE(offcutE(b)) >= REUSE);
+if (planned.bars.length !== inOrder.bars.length) fail("figure text: patterns no longer use the same number of bars");
+if (reusable(inOrder).length !== 0 || reusable(planned).length !== 1) {
+  fail("figure text: expected no reusable remnant in order, exactly one when planned");
+}
+
 // ---------------------------------------------------------------------------
 // 2. SVG rendering.
 
