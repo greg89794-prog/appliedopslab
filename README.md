@@ -118,5 +118,5 @@ From then on, each push to `main` deploys automatically.
 
 - **Tone.** A white page, charcoal text, and one navy accent, with IBM Plex Sans throughout. Plex was designed for engineering documentation, so it reads as technical without looking like a startup. It is served from this site, so no font service sees visitors.
 - **Figure 1 is the centerpiece.** It is laid out like a drawing sheet, with a title block covering parts, stock, kerf, and offcut rules. Both patterns use the same three bars and leave the same 39.125 in of offcut. Cutting in order leaves three short pieces of scrap. Planning the set as a whole leaves a single 36.5 in remnant that can be reused. The figure makes its point without claiming a saving. On phones it switches to a compact version that labels parts by letter.
-- **One motif, used sparingly.** A stock bar with saw cuts appears in the logo, the favicon, and the hero rule.
+- **One motif, used sparingly.** A stock bar with saw cuts appears in the logo and the favicon.
 - **No JavaScript.** "Share Your Experience" jumps to the contact section. "Send an Email" opens a draft with the subject "Cutting Optimization Research".

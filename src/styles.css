@@ -250,61 +250,6 @@ a:hover {
   color: var(--rule-strong);
 }
 
-.hero-rule {
-  margin-top: clamp(3.5rem, 2rem + 5vw, 6rem);
-}
-
-.hero-bar {
-  display: block;
-  width: 100%;
-  height: 24px;
-}
-
-.hero-seg {
-  fill: var(--steel-pale);
-}
-
-.hero-kerf {
-  stroke: var(--navy);
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-}
-
-.hero-stock {
-  fill: none;
-  stroke: var(--ink-2);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-}
-
-/* A drafting-style dimension line: |----- 240 in stock length -----| */
-.hero-rule-label {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-  font-size: 0.8125rem;
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
-}
-
-.hero-rule-label::before,
-.hero-rule-label::after {
-  content: "";
-  flex: 1;
-  height: 9px;
-  border-top: 1px solid var(--rule-strong);
-  transform: translateY(4px);
-}
-
-.hero-rule-label::before {
-  border-left: 1px solid var(--rule-strong);
-}
-
-.hero-rule-label::after {
-  border-right: 1px solid var(--rule-strong);
-}
-
 /* Sections ----------------------------------------------------------- */
 
 .section {

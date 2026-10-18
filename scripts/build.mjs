@@ -193,24 +193,6 @@ function caption(pattern) {
   return parts.join(" ");
 }
 
-// The hero rule: one bar from the planned pattern, drawn as an outline.
-function heroBar() {
-  const bar = data.patterns.find((p) => p.id === "planned").bars[1];
-  const W = 1000;
-  const scale = W / STOCK;
-  const out = [`<svg class="hero-bar" viewBox="0 0 ${W} 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">`];
-  let e = 0;
-  for (const p of bar) {
-    out.push(`<rect class="hero-seg" x="${fmt(fromE(e) * scale)}" y="6" width="${fmt(PARTS[p] * scale)}" height="12"/>`);
-    e += toE(PARTS[p]);
-    const kx = (fromE(e) + KERF / 2) * scale;
-    out.push(`<line class="hero-kerf" x1="${fmt(kx)}" y1="0" x2="${fmt(kx)}" y2="24"/>`);
-    e += toE(KERF);
-  }
-  out.push(`<rect class="hero-stock" x="0" y="6" width="${W}" height="12"/>`, `</svg>`);
-  return out.join("");
-}
-
 const partsList = Object.entries(PARTS)
   .map(([p, len]) => {
     const n = demand[p] || 0;
@@ -219,7 +201,6 @@ const partsList = Object.entries(PARTS)
   .join("");
 
 const inject = {
-  "hero-bar": heroBar(),
   "parts-list": partsList,
   "stock-length": fmt(STOCK),
   "stock-feet": fmt(STOCK / 12),
